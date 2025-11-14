@@ -60,4 +60,8 @@ class CronService {
 			}
 		}
 	}
+
+	public function compromiseCredentials() {
+		$compromised_credentials
+	}
 }
