@@ -46,3 +46,12 @@
 	</div>
 
 </div>
+<div class="row">
+	<div class="col-xs-12">
+		<p>{{ 'tool.haveibeenpwned.description' | translate }}</p>
+	</div>
+	<div class="col-xs-12" >
+		{{ 'haveibeenpwned.monthly' | translate }} <input type="checkbox" class="checkbox">
+		<button ng-click="startHaveIBeenPwnedScan()">{{ 'haveibeenpwned.start' | translate }}</button>
+	</div>
+</div>

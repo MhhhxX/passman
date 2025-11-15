@@ -200,6 +200,13 @@
 					});
 				};
 
+				$scope.startHaveIBeenPwnedScan = function () {
+					getCurrentVaultCredentials(function (vault) {
+						var results = [];
+						const vault_id = VaultService.vault_id;
+					});
+				}
+
 
 				$scope.cur_state = {};
 
