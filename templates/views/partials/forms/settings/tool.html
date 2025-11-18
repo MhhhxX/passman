@@ -48,10 +48,40 @@
 </div>
 <div class="row">
 	<div class="col-xs-12">
-		<p>{{ 'tool.haveibeenpwned.description' | translate }}</p>
+		<p>{{ 'tool.haveibeenpwned' | translate }}</p>
 	</div>
 	<div class="col-xs-12" >
 		{{ 'haveibeenpwned.monthly' | translate }} <input type="checkbox" class="checkbox">
 		<button ng-click="startHaveIBeenPwnedScan()">{{ 'haveibeenpwned.start' | translate }}</button>
+	</div>
+</div>
+<div class="row" ng-show="have_i_been_pwned_result">
+	<div class="col-xs-12">
+		<table class="table scan-result-table spacer-top-30">
+			<p class="spacer-top-30"><b>{{ 'haveibeenpwned.result.msg' | translate}}</b><br/>
+			<span translate="haveibeenpwned.result"
+				 translate-values='{ have_i_been_pwned_result: have_i_been_pwned_result.length}'></span>
+			<br/>
+		</p>
+		<table class="table scan-result-table spacer-top-30">
+			<thead>
+			<tr>
+				<td><b>{{ 'label' | translate}}</b></td>
+				<td><b>{{ 'action' | translate}}</b></td>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="result in have_i_been_pwned_result">
+				<td class="label-audit">{{result.label}}</td>
+				<td>
+					<div>
+						<a href="#/vault/{{ active_vault.guid }}/edit/{{result.guid}}" class="link">
+							<i class="fa fa-edit"></i>
+						</a>
+					</div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
 	</div>
 </div>

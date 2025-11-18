@@ -253,6 +253,9 @@ class TranslationController extends ApiController {
 			'scan.start' => $this->trans->t('Start scan'),
 			'scan.result.msg' => $this->trans->t('Result'),
 			'scan.result' => $this->trans->t('A total of {{scan_result}} weak credentials were found.'),
+			'tool.haveibeenpwned' => $this->trans->t('HaveIBeenPwned'),
+			'haveibeenpwned.monthly' => $this->trans->t('Check monthly'),
+			'haveibeenpwned.start' => $this->trans->t('Scan now'),
 			'score' => $this->trans->t('Score'),
 			'action' => $this->trans->t('Action'),
 
