@@ -1,12 +1,9 @@
 {
     "name": "Passman Dev Container",
-    "dockerFile": "../Dockerfile",
-    "context": "..",
-    "overrideCommand": false,
-    "build": {
-        "target": "dev"
-    },
-    "appPort": ["3001:3001", "9001:80", "9002:443"],
+    "dockerComposeFile": ["./docker-compose.yml"],
+    "service": "nextcloud",
+    "forwardPorts": ["3001:80", "3002:8080"],
+    "postCreateCommand": "bash .devcontainer/setup.sh",
     "customizations": {
         "vscodium": {
             "extensions": [
@@ -21,7 +18,6 @@
     },
     "containerUser": "root",
     "remoteUser": "www-data",
-    "workspaceFolder": "/var/www/passman",
-    "workspaceMount": "source=${localWorkspaceFolder},target=/var/www/passman,type=bind,consistency=cache",
-    "runArgs": ["--log-opt", "max-size=10M", "--log-opt", "max-file=3"]
+    "updateRemoteUserUID": true,
+    "workspaceFolder": "/var/www/html/custom_apps/passman"
 }
